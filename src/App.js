@@ -6,9 +6,13 @@ import Restaurant from './components/routes/Restaurant'
 import Restaurants from './components/routes/Restaurants';
 import RestaurantCreate from './components/routes/RestaurantCreate';
 import GetIdFromParams from './components/shared/GetIdFromParams';
+import Home from './components/routes/Home'
+
 const App = () => (
   <Router>
       <Routes>
+        ;<Route path='/' element={<Home />} />
+
         <Route exact path='/restaurant/getAll' element={<Restaurants />} />
         <Route
           exact
