@@ -55,4 +55,4 @@ class Restaurant extends Component {
   }
 }
 
-export default Book
+export default Restaurant
