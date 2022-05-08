@@ -1,13 +1,14 @@
 {
-  "name": "applicationfrontend",
+  "name": "amazonApplicationClient",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://johnnia001.github.io/amazonApplicationClient",
+  "homepage": "https://johnnia001.github.io/amazonApplicationClient",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "node": "^17.7.2",
     "react": "^18.1.0",
     "react-bootstrap": "^2.3.1",
     "react-dom": "^18.1.0",
