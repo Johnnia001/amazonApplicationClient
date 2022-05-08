@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { Navigate } from 'react-router-dom'
 import axios from 'axios'
+
 import apiUrl from '../../apiConfig'
 import RestaurantForm from '../shared/RestaurantForm'
 
-export default class RestaurantCreate extends Component {
+class RestaurantCreate extends Component {
   constructor (props) {
     super(props)
-    this.id = props.id
+    this.id= props.id
     this.state = {
       restaurant: {
         applicant: '',
@@ -19,7 +20,7 @@ export default class RestaurantCreate extends Component {
   }
 
   handleChange = event => {
-    const updatedInput = { [event.target.applicant]: event.target.value }
+    const updatedInput = { [event.target.name]: event.target.value }
     const createdRestaurant = Object.assign(this.state.restaurant, updatedInput)
     this.setState({ restaurant: createdRestaurant })
   }
@@ -27,8 +28,8 @@ export default class RestaurantCreate extends Component {
   handleSubmit = event => {
     event.preventDefault()
 
-    axios
-      .post(`${apiUrl}/restaurants`, { restaurant: this.state.restaurant })
+   axios
+      .post(`${apiUrl}/restaurant/getAll`, { restaurant: this.state.restaurant })
       .then(() => this.setState({ created: true }))
       .catch(console.error)
   }
@@ -36,17 +37,19 @@ export default class RestaurantCreate extends Component {
   render () {
     const { restaurant, created } = this.state
 
-    if (created) return <Navigate to={'/restaurant/getAll'} />
+if (created) return <Navigate to={`/restaurant/${restaurant.id}`} />
 
-    return (
-      <>
-        <RestaurantForm
-          restaurant={restaurant}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-          cancelUrl={'/restaurant/getAll'}
-        />
-      </>
-    )
+return (
+  <>
+    <RestaurantForm
+      restaurant={restaurant}
+      handleChange={this.handleChange}
+      handleSubmit={this.handleSubmit}
+      cancelUrl={'/restaurant/getAll'}
+    />
+  </>
+)
+
   }
 }
+export default RestaurantCreate

@@ -9,10 +9,10 @@ class Restaurant extends Component {
     // id passed in from GetIdFromProps
     this.id = props.id
     this.state = {
-      Restaurant: {
+      restaurant: {
         applicant: '',
         address: '',
-        foodItems:'',
+        foodItems:''
       },
       destroyed: false
     }
@@ -23,7 +23,7 @@ class Restaurant extends Component {
   async componentDidMount () {
     try {
       const response = await axios.get(`${apiUrl}/restaurant/${this.props.id}`)
-      this.setState({ book: response.data.book })
+      this.setState({ restaurant: response.data })
     } catch (error) {
       console.error(error)
     }
@@ -31,14 +31,7 @@ class Restaurant extends Component {
 
   // event handler functions -- react to the user input
   // contacts the api when the user clicks a button
-  handleDestroy = () => {
-    // make http req to destroy the book
-    axios
-      .delete(`${apiUrl}/restaurant/${this.props.id}`)
-      // set the state destroyed to be true
-      .then(() => this.setState({ destroyed: true }))
-      .catch(console.error)
-  }
+
 
   render () {
     const { restaurant, destroyed } = this.state
@@ -49,7 +42,8 @@ class Restaurant extends Component {
       <>
         <h4>{restaurant.applicant}</h4>
         <p>Address: {restaurant.address}</p>
-        <Link to={`/restaurant/${this.props.id}/edit`}>Edit</Link>
+        <p>Food Type: {restaurant.foodItems}</p>
+        <Link to={`/restaurant/getAll`}>Back to Restaurant List</Link>
       </>
     )
   }

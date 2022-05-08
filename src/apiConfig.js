@@ -1,7 +1,7 @@
 let apiUrl
 const apiUrls = {
   production: 'https://tranquil-stream-27269.herokuapp.com/',
-  development: 'localhost:8080'
+  development: 'http://localhost:8080'
 }
 
 if (window.location.hostname === 'localhost') {
