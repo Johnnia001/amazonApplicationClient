@@ -23,13 +23,16 @@ class RestaurantCreate extends Component {
     const updatedInput = { [event.target.name]: event.target.value }
     const createdRestaurant = Object.assign(this.state.restaurant, updatedInput)
     this.setState({ restaurant: createdRestaurant })
+    console.log(this.state)
+
   }
 
   handleSubmit = event => {
     event.preventDefault()
 
    axios
-      .post(`${apiUrl}/restaurant/getAll`, { restaurant: this.state.restaurant })
+      .post(`${apiUrl}/restaurant/add`, this.state.restaurant
+)
       .then(() => this.setState({ created: true }))
       .catch(console.error)
   }
@@ -37,7 +40,7 @@ class RestaurantCreate extends Component {
   render () {
     const { restaurant, created } = this.state
 
-if (created) return <Navigate to={`/restaurant/${restaurant.id}`} />
+ if (created) return <Navigate to={`/restaurant/getAll`} />
 
 return (
   <>
