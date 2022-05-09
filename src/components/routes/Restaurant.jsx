@@ -40,6 +40,8 @@ class Restaurant extends Component {
 
     return (
       <>
+      ;<Link to={'/'}>Home</Link>
+
         <h4>{restaurant.applicant}</h4>
         <p>Address: {restaurant.address}</p>
         <p>Food Type: {restaurant.foodItems}</p>

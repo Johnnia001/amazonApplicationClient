@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Navigate } from 'react-router-dom'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 import apiUrl from '../../apiConfig'
 import RestaurantForm from '../shared/RestaurantForm'
@@ -44,6 +45,8 @@ class RestaurantCreate extends Component {
 
 return (
   <>
+  ;<Link to={'/'}>Home</Link>
+
     <RestaurantForm
       restaurant={restaurant}
       handleChange={this.handleChange}

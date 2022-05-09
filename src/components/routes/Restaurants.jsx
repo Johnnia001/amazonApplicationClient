@@ -30,7 +30,11 @@ class Restaurants extends Component {
 
     return (
       <div>
+        <Link to={'/'}>Home</Link>
+
         <h4>Restaurants</h4>
+      
+
         <div>{restaurants}</div>
       </div>
     )
