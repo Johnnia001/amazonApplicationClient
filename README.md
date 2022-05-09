@@ -4,10 +4,12 @@
 
 ## Links
 
-[Other Repo](https://github.com/Johnnia001/AmazonApplication
+- [Other Repo](https://github.com/Johnnia001/AmazonApplication
 )
-[Deployed Api](https://tranquil-stream-27269.herokuapp.com/)
-[Deployed Client](https://amazon-application-client.vercel.app/)
+
+- [Deployed Api](https://tranquil-stream-27269.herokuapp.com/)
+
+ - [Deployed Client](https://amazon-application-client.vercel.app/)
 
 
 This is a RESTful API using MVC architectural pattern To retrieve a list of the San Francisco Food Trucks.
