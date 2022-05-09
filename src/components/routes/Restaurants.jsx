@@ -15,7 +15,7 @@ class Restaurants extends Component {
   }
 
   componentDidMount () {
-    axios(`${apiUrl}/restaurant/getAll`)
+    axios(`${apiUrl}/restaurant/getAll`, {headers: {'Accept': 'application/json'}})
       .then(res => this.setState({ restaurants: res.data}))
       .catch(console.error)
   }
