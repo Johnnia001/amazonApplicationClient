@@ -45,7 +45,7 @@ class RestaurantCreate extends Component {
 
 return (
   <>
-  ;<Link to={'/'}>Home</Link>
+  <Link to={'/'}>Home</Link>
 
     <RestaurantForm
       restaurant={restaurant}
